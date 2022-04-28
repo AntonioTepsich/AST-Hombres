@@ -209,6 +209,12 @@ body{
         background-color: var(--color-primary);
         border-radius: 5px;
         padding: 2px 5px;
+
+        transition: .5s ease all;
+        animation-name: aparecer;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
     
     .about__text a:hover{
@@ -490,18 +496,91 @@ body{
         margin-right: 10px;
         padding: 10px 5px;
         font-weight: inherit;
+        transition: .3s;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .nav__items--inicio{
+        color: #fff;
+        text-decoration: none;
+        margin-right: 10px;
+        padding: 10px 5px;
+        font-weight: inherit;
+        transition: .3s;
+        position: relative;
+        overflow: hidden;
     }
 
     .nav__items:hover{
         background: var(--color-secundary);
         border-radius: 5px;
+        box-shadow: 0 0 10px var(--color-secundary), 0 0 20px var(--color-secundary), 0 0 30px var(--color-secundary);
+        transition-delay: 1s;
+    }
+    .nav__items span{
+        position: absolute;
+        display: block;
+    }
+
+    #span1{
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(90deg,transparent, var(--color-secundary) ) ;
+    }
+    .nav__items:hover #span1{
+        left: 100%;
+        transition: 1s;
+    }
+    #span3{
+        bottom: 0;
+        right: -100%;
+        width: 100%;
+        height: 2px;
+        background: linear-gradient(270deg,transparent, var(--color-secundary) ) ;
+    }
+    .nav__items:hover #span3{
+        right: 100%;
+        transition: 1s;
+        transition-delay: 0.5s;
+    }
+    #span2{
+        top: -100%;
+        right: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(180deg,transparent, var(--color-secundary) ) ;
+    }
+    .nav__items:hover #span2{
+        top: 100%;
+        transition: 1s;
+        transition-delay: 0.25s;
+    }
+    #span4{
+        bottom: -100%;
+        left: 0;
+        width: 2px;
+        height: 100%;
+        background: linear-gradient(360deg,transparent, var(--color-secundary) ) ;
+    }
+    .nav__items:hover #span4{
+        bottom: 100%;
+        transition: 1s;
+        transition-delay: 0.75s;
     }
 
     .nav__items--cta{
         border: 2px solid #fff;
         border-radius: 5px;
     }
-    
+    .nav__items--inicio:hover{
+        background: var(--color-secundary);
+        border-radius: 5px;
+        box-shadow: 0 0 10px var(--color-secundary), 0 0 20px var(--color-secundary), 0 0 30px var(--color-secundary);
+        transition: .3s;
+    }
     .nav__items--footer{
         padding: 10px;
     }
@@ -630,6 +709,12 @@ body{
         background-color: var(--color-primary);
         border-radius: 5px;
         padding: 2px 5px;
+
+        transition: .5s ease all;
+        animation-name: aparecer;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
     }
     
     .about__text a:hover{
@@ -696,7 +781,15 @@ body{
         color: var(--color-secundary);
     }
     
-    
+    .subtitle__tres{
+        color: var(--color-primary);
+        font-size: 2.5rem;
+        display: flex;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 2rem;
+    }
+
     .product-list{
         margin: 40px;
     }
@@ -851,4 +944,9 @@ body{
         position: relative;
         z-index: 1;
     } 
+}
+
+@keyframes aparecer {
+    0% {opacity: 0.5;}
+    100% {opacity: 1;}
 }
